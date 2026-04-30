@@ -1,8 +1,5 @@
 from django.db import transaction
 from rest_framework import serializers
-
-import os
-import uuid
 from django.utils.text import slugify
 
 from cinema.models import (
