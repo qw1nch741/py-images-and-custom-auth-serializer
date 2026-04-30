@@ -1,10 +1,10 @@
-from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.contrib import admin
-from user.models import User
+from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import gettext_lazy as _
 
 
-@admin.register(User)
+@admin.register(get_user_model())
 class UserAdmin(DjangoUserAdmin):
     """Define admin model for custom User model with no username field."""
 

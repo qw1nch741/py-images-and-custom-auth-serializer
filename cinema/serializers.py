@@ -39,13 +39,6 @@ class MovieImageSerializer(serializers.ModelSerializer):
         model = Movie
         fields = ("id", "image")
 
-    def create_custom_path(self, instance, filename):
-        _, extension = os.path.splitext(filename)
-        return os.path.join(
-            "uploads/images/",
-            f"{slugify(instance.title)}-{uuid}{extension}"
-        )
-
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
